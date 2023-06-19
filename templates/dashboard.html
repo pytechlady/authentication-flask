@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Dashboard</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5">Dashboard</h1>
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+    <p class="lead">Welcome to your dashboard</p>
+    <p class="lead">You are logged in as {{ current_user.username }}</p>
+    <p class="lead">Your email is {{ current_user.email }}</p>
+    <button type="button" class="btn btn-primary">Logout</button>
+</div>
+{% endblock %}
+```

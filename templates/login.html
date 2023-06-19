@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5">Login to your acount</h1>
+    {% for message in get_flashed_messages() %}
+
+    <!-- {% if message.category == 'error' %}
+    <div class="alert alert-warning danger-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% elif message.category == 'success' %}
+    <div class="alert alert-warning success-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% else %} -->
+    <div class="alert alert-warning warning-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <!-- {% endif %} -->
+
+    {% endfor %}
+    <form action="/login" method="POST">
+        <div class="mb-3">
+          <label for="exampleInputUsername" class="form-label">Username</label>
+          <input type="text" class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" name="username">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password_hash">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <div id="loginHelp" class="form-text mt-3">
+       <a href="/">Register</a> || 
+       <a href="/reset-password">Forgot Password</a>
+         </div>
+      </form>
+</div>
+  {% endblock %}

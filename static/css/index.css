@@ -1,0 +1,8 @@
+.under-form {
+    display: flex !important;
+    justify-content: space-between !important;
+}
+.under-form a {
+    color: #fff !important;
+    text-decoration: none !important;
+}
